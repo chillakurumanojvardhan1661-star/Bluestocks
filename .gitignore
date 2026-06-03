@@ -1,0 +1,15 @@
+# Ignore SQLite databases
+*.db
+*.sqlite
+
+# Python ignore
+__pycache__/
+*.py[cod]
+*$py.class
+.ipynb_checkpoints/
+.venv/
+venv/
+env/
+
+# System ignore
+.DS_Store
