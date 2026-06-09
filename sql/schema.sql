@@ -118,3 +118,21 @@ CREATE TABLE IF NOT EXISTS fact_sip_industry (
     sip_aum_lakh_crore REAL,
     yoy_growth_pct REAL
 );
+
+-- Fact: Computed Fund Performance and Scorecard
+CREATE TABLE IF NOT EXISTS fact_performance_computed (
+    amfi_code TEXT PRIMARY KEY,
+    return_1yr_pct REAL,
+    return_3yr_pct REAL,
+    return_5yr_pct REAL,
+    sharpe_ratio REAL,
+    sortino_ratio REAL,
+    alpha REAL,
+    beta REAL,
+    max_drawdown_pct REAL,
+    std_dev_ann_pct REAL,
+    category TEXT,
+    expense_ratio_pct REAL,
+    composite_score REAL,
+    FOREIGN KEY (amfi_code) REFERENCES dim_fund(amfi_code)
+);

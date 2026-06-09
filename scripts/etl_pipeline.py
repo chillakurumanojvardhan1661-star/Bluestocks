@@ -13,6 +13,11 @@ SCHEMA_PATH = "/Users/manojvardhan/Bluestocks/sql/schema.sql"
 def init_db():
     print("Initializing Database...")
     os.makedirs(DB_DIR, exist_ok=True)
+    if os.path.exists(DB_PATH):
+        try:
+            os.remove(DB_PATH)
+        except Exception as e:
+            print(f"Error removing old DB file: {e}")
     conn = sqlite3.connect(DB_PATH)
     cursor = conn.cursor()
     with open(SCHEMA_PATH, 'r') as f:
