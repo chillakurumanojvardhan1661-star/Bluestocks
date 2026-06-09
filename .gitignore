@@ -13,3 +13,6 @@ env/
 
 # System ignore
 .DS_Store
+
+# Submission folder
+ManojVardhan_Submission/
